@@ -1,5 +1,6 @@
 # 自由背 —— 微信小程序 
 一个程序自由背遍天下题
+![https://github.com/gaowanliang/ZiYouBei/blob/master/images/qrcode.jpg]
 
 很荣幸我的小程序在本次比赛中获得全国三等奖，对于一个不怎么会JavaScript，开发时间不到半个月（我5月14号报的名）的菜鸡大一学生来说确实很意外。因为本人没有精力继续开发这个小程序，所以将其开源，算是让大佬们看个笑话
 
