@@ -1,0 +1,15 @@
+/**app.wxss**/
+
+page {
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0rpx0;
+  box-sizing: border-box;
+}
+
+@import "miniprogram_npm/vant-weapp/common/index.wxss";

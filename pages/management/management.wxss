@@ -1,0 +1,25 @@
+/* pages/management/management.wxss */
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*position: relative;*/
+  width: 100%;
+  height: 500rpx;
+  background: #76a21e;
+  color: #fff;
+}
+
+.userinfo-avatar {
+  /*padding: 10rpx;*/
+  width: 200rpx;
+  height: 200rpx;
+  margin: 2rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  margin: 30rpx;
+  color: #aaa;
+}

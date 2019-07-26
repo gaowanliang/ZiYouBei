@@ -1,0 +1,13 @@
+<!--pages/whc/whc.wxml-->
+<view wx:if="{{done}}">
+  <van-collapse value="{{ active2 }}" data-key="active2" accordion bind:change="onChange">
+    <view wx:for="{{wrdata}}">
+      <van-collapse-item title="{{item.tm}}" value="做错{{item.wrcount}}次">
+        答案：{{item.aws}}
+      </van-collapse-item>
+    </view>
+  </van-collapse>
+</view>
+<view wx:else>
+  这个题库没找到错题，看看其他题库吧！
+</view>

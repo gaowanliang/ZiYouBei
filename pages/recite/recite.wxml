@@ -1,0 +1,65 @@
+<!--pages/recite/recite.wxml-->
+<van-notify id="van-notify" />
+<van-dialog id="van-dialog" />
+<view wx:if="{{!dis['done']}}">
+  <view style='padding: 20rpx 0;'>
+    <van-progress pivot-text="{{ptitle}}" color="#1abc9c" percentage="{{progress}}" />
+  </view>
+  <view class='con'>
+    <view class='r'>
+      <text class='rt'>{{qt}}</text>
+    </view>
+  </view>
+  <view class='judgeall' wx:if="{{variety=='1'}}">
+    <van-radio-group value="{{ radio }}">
+      <view id="A" class='judge' bindtap='onChanges'>
+        <van-radio id="A" name="A" bindtap='onChanges'>A:{{xzt['xA']}}</van-radio>
+        <image class="smallicon" src='{{xzt["sA"]}}'></image>
+      </view>
+      <view id="B" class='judge' bindtap='onChanges'>
+        <van-radio id="B" name="B" bindtap='onChanges'>B:{{xzt["xB"]}}</van-radio>
+        <image class="smallicon" src='{{xzt["sB"]}}'></image>
+      </view>
+      <view id="C" class='judge' bindtap='onChanges'>
+        <van-radio id="C" name="C" bindtap='onChanges'>C:{{xzt["xC"]}}</van-radio>
+        <image class="smallicon" src='{{xzt["sC"]}}'></image>
+      </view>
+      <view id="D" class='judge' bindtap='onChanges'>
+        <van-radio id="D" name="D" bindtap='onChanges'>D:{{xzt["xD"]}}</van-radio>
+        <image class="smallicon" src='{{xzt["sD"]}}'></image>
+      </view>
+    </van-radio-group>
+  </view>
+  <view wx:if="{{variety=='2'}}">
+    <van-field value="{{tkt.message}}" label="你的答案" type="textarea" error-message="{{tkt.errors}}" disabled="{{false}}" placeholder="请输入" rows="1" autosize border="{{false}}" bind:change="fieldChangetkt" />
+    <view style='font-size:14px;text-align:center;margin:10px;color:#bdc3c7'>如果有多个空，请在两个空的答案之间用一个空格分割</view>
+    <view wx:if="{{tkt.show}}" style='font-size:14px;width:95%;margin:10px;color:#6ab04c;display:flex;flex-direction:column;align-items:center;'>
+      答案：{{aws}}
+    </view>
+  </view>
+  <view class='judgeall' wx:if="{{variety=='3'}}">
+    <van-radio-group value="{{ radio }}">
+      <view id="1" class='judge' bindtap='onChanges'>
+        <van-radio id="1" name="1" bindtap='onChanges'>对</van-radio>
+        <image class="smallicon" src='{{pdt["s1"]}}'></image>
+      </view>
+      <view id="2" class='judge' bindtap='onChanges'>
+        <van-radio id="2" name="2" bindtap='onChanges'>错</van-radio>
+        <image class="smallicon" src='{{pdt["s2"]}}'></image>
+      </view>
+    </van-radio-group>
+  </view>
+  <view wx:if="{{variety=='4'}}">
+    <van-field value="{{jdt.message}}" label="你的答案" type="textarea" error-message="{{jdt.errors}}" disabled="{{false}}" placeholder="请输入" rows="1" autosize border="{{false}}" bind:change="fieldChangejdt" />
+    <view style='font-size:14px;text-align:center;margin:10px;color:#bdc3c7'>简答题现阶段使用Levenshtein函数计算是否正确</view>
+    <view style='font-size:14px;text-align:center;margin:10px;color:#bdc3c7'>只有DL值(相似度)大于80%才算是正确</view>
+    <view wx:if="{{jdt.show}}" style='font-size:14px;width:95%;margin:10px;color:#6ab04c;display:flex;flex-direction:column;align-items:center;'>
+      答案：{{aws}}
+    </view>
+  </view>
+  <view class="cons">
+    <view class="buhui" bindtap='buhui' style='{{zzz}}'>不会</view>
+    <view class="check" bindtap='check' style='{{uuu}}'>{{queding}}</view>
+  </view>
+
+</view>

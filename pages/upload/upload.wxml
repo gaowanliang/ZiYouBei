@@ -1,0 +1,24 @@
+<!--pages/upload/upload.wxml-->
+<van-notice-bar mode="closeable" text="因为内部调整，点击“去上传”不再跳转到浏览器，请大家自行打开浏览器粘贴网址(手机电脑都可以打开网页上传)" />
+<van-dialog id="van-dialog" />
+<van-panel title="你的专属上传码" desc="有效时间30分钟" status="有效时间还有{{times}}分钟">
+
+  <view class='containers'>
+    <view class='abc'>
+      <van-loading wx:if="{{passwd==0}}" type="spinner" />
+      <text>{{passwd}}</text>
+    </view>
+  </view>
+  <view class='scss'>
+    <van-button size="small" bindtap='copy'>复制上传码</van-button>
+    <van-button size="small" type="danger" bindtap='rub' style='padding: 0 10rpx;'>销毁</van-button>
+    <van-button size="small" type="primary" bindtap='goup'>去上传</van-button>
+  </view>
+
+</van-panel>
+<view class='containe'>
+  <text style='font-size: 24px;'>实验性功能：扫码登录上传网页</text>
+  <text>电脑浏览器打开网页 7.ly/zyb233</text>
+  <text>点击下方扫码工具扫码登录</text>
+  <image bindtap="scanQR" class="scanQRcss" align="right" src='https://s2.ax1x.com/2019/05/24/VFUw3n.png'></image>
+</view>

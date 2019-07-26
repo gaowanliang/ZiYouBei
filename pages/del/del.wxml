@@ -1,0 +1,33 @@
+<!--pages/del/del.wxml-->
+<van-dialog id="van-dialog" />
+
+<view wx:if="{{id==''}}">
+  <view class='containers'>
+    <image src='/images/arrow.png' class='smallicon'></image>
+    向左或向右滑动题库名即可删除题库
+  </view>
+  <view wx:for="{{names}}">
+    <van-swipe-cell id="{{allinf[index]['id']}}" right-width="65" left-width="65" async-close bind:close="onClose">
+      <view slot="left" class="van-swipe-cell__left">删除</view>
+      <van-cell-group>
+        <van-cell title="{{item}}" />
+      </van-cell-group>
+      <view slot="right" class="van-swipe-cell__right">删除</view>
+    </van-swipe-cell>
+  </view>
+</view>
+<view wx:else>
+  <view class='containers'>
+    <image src='/images/arrow.png' class='smallicon'></image>
+    向左或向右滑动题目名即可修改/删除题库
+  </view>
+  <view wx:for="{{topic}}">
+    <van-swipe-cell id="{{index}}" right-width="65" left-width="65" async-close bind:close="onClosed">
+      <view slot="left">删除</view>
+      <van-cell-group>
+        <van-cell title="{{topic[index]['qtitle']}}" />
+      </van-cell-group>
+      <view slot="right">修改</view>
+    </van-swipe-cell>
+  </view>
+</view>

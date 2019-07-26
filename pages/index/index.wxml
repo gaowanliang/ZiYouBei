@@ -1,0 +1,52 @@
+<!--index.wxml-->
+<van-toast id="van-toast" />
+<view class="container">
+  <view class="userinfo" style='border-radius:0 0 15px 15px;'>
+    <view class="jz" wx:if="{{!hasUserInfo && canIUse}}">
+      <van-button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        点我登录 </van-button>
+    </view>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname" style='color:#ecf0f1;'>欢迎你，{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <van-dialog id="van-dialog" />
+  <view class="title">
+    <image class="logo" src="/images/1.png" />
+    <view class="title-text">自由背</view>
+    <image bindtap="scanQR" class="scanQRcss" align="right" src='https://s2.ax1x.com/2019/05/24/VFUw3n.png'></image>
+  </view>
+  <view class="desc" style='padding-left: 25px;'>一个程序自由背遍天下题</view>
+  <view class="usermotto">
+    <van-transition name="fade-up" show="{{ show }}" class='r' style='margin: 0 7px;' id='upload' bindtap='nto'>
+      <image src='https://s2.ax1x.com/2019/04/10/A7kTvq.png' id='upload' class='img' style='margin:0 8rpx;'></image>
+      <view id='upload'>上传题库</view>
+    </van-transition>
+    <van-transition name="fade-up" show="{{ show }}" class='r' style='margin: 0 7px;' id='recite' bindtap='nto'>
+      <image src='https://s2.ax1x.com/2019/04/10/A7AS2R.png' id='recite' class='img'></image>
+      <view id='recite' style='width:100%;margin:0 30rpx;'>背题</view>
+    </van-transition>
+  </view>
+  <view class="usermotto">
+    <van-transition name="fade-up" show="{{ show }}" class='r' style='margin: 0 7px;' id='whc' bindtap='nto'>
+      <image src='https://s2.ax1x.com/2019/04/10/A7APr6.png' id='whc' class='img'></image>
+      <view id='whc' style='margin:0 15rpx;'>错题集</view>
+    </van-transition>
+    <van-transition name="fade-up" show="{{ show }}" class='r' style='margin: 0 7px;' id='share' bindtap='nto'>
+      <image src='https://s2.ax1x.com/2019/04/10/A7AiqK.png' id='share' class='img' style='margin:0 8rpx;'></image>
+      <view id='share'>分享题库</view>
+    </van-transition>
+  </view>
+  <view class="cons">
+    <block wx:if="{{!hasopenidInfo}}">
+      <view id='circle'></view>
+      <view class="desc" bindtap='connect'>未连接服务器，点击连接</view>
+    </block>
+    <block wx:else>
+      <view id='circle' style='background:green;'></view>
+      <view class="desc">已连接服务器</view>
+    </block>
+  </view>
+</view>
+<!--图标提供： https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=15891 -->

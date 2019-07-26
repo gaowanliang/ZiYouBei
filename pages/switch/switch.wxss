@@ -1,0 +1,30 @@
+/* pages/switch/switch.wxss */
+
+.u {
+  width: 300rpx;
+  height: 300rpx;
+  margin: 20rpx;
+  /**/
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.kuang {
+  height: 80%;
+  border: 3px solid #e4e4e2;
+  font-size: 16px;
+  background-color: #fff;
+  color: #353b48;
+}
+
+.containers {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}

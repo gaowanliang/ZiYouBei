@@ -1,0 +1,46 @@
+<!--pages/change/change.wxml-->
+<view style='margin-top:50rpx;'>
+  <van-field value="{{topic}}" id="topic" label="题目" type="textarea" error-message="{{errors}}" disabled="{{false}}" placeholder="请输入" rows="1" autosize border="{{false}}" bind:change="fieldChange" />
+</view>
+<view wx:if="{{variety=='1'}}">
+  <view style='font-size:14px;color:#bdc3c7;margin:10px 15px;'>答案</view>
+  <view class="demo-radio-group">
+
+    <van-radio-group value="{{ radio1 }}" data-key="radio1" bind:change="onChange">
+      <van-radio name="A" class="demo-radio" checked-color="#07c160">A</van-radio>
+      <van-radio name="B" class="demo-radio" checked-color="#07c160">B</van-radio>
+      <van-radio name="C" class="demo-radio" checked-color="#07c160">C</van-radio>
+      <van-radio name="D" class="demo-radio" checked-color="#07c160">D</van-radio>
+    </van-radio-group>
+  </view>
+  <view style='font-size:14px;color:#bdc3c7;margin:10px 15px;'>选项描述</view>
+  <van-field value="{{xzt.A}}" label="A" id="xzt.A" type="textarea" disabled="{{false}}" placeholder="请输入" rows="1" autosize border="{{false}}" bind:change="fieldChange" />
+  <van-field value="{{xzt.B}}" label="B" id="xzt.B" type="textarea" disabled="{{false}}" placeholder="请输入" rows="1" autosize border="{{false}}" bind:change="fieldChange" />
+  <van-field value="{{xzt.C}}" label="C" id="xzt.C" type="textarea" disabled="{{false}}" placeholder="请输入" rows="1" autosize border="{{false}}" bind:change="fieldChange" />
+  <van-field value="{{xzt.D}}" label="D" id="xzt.D" type="textarea" disabled="{{false}}" placeholder="请输入" rows="1" autosize border="{{false}}" bind:change="fieldChange" />
+</view>
+
+<view wx:if="{{variety=='2'}}">
+  <view style='font-size:14px;color:#bdc3c7;margin:10px 15px;'>答案(如果有多个空，请在两个空的答案之间用一个空格分割)</view>
+  <van-field value="{{tktaws}}" label="填空答案" id="tktaws" type="textarea" disabled="{{false}}" placeholder="请输入" rows="1" autosize border="{{false}}" bind:change="fieldChange" />
+</view>
+<view wx:if="{{variety=='3'}}">
+  <view style='font-size:14px;color:#bdc3c7;margin:10px 15px;'>答案</view>
+  <view class="demo-radio-group">
+    <van-radio-group value="{{ pdtaws }}" data-key="pdtaws" bind:change="onChange">
+      <van-radio name="1" class="demo-radio" checked-color="#07c160">对</van-radio>
+      <van-radio name="2" class="demo-radio" checked-color="#07c160">错</van-radio>
+    </van-radio-group>
+  </view>
+</view>
+<view wx:if="{{variety=='4'}}">
+  <view style='font-size:14px;color:#bdc3c7;margin:10px 15px;'>答案</view>
+  <van-field value="{{jdtaws}}" label="简答答案" id="jdtaws" type="textarea" disabled="{{false}}" placeholder="请输入" rows="1" autosize border="{{false}}" bind:change="fieldChange" />
+</view>
+
+<view class="con">
+  <view class="check" bindtap='check'>修改</view>
+</view>
+
+<van-dialog id="van-dialog" />
+<van-notify id="van-notify" />

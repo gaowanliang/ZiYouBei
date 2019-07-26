@@ -1,0 +1,140 @@
+/**index.wxss**/
+
+.containers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /*padding: 200rpx 0;*/
+  box-sizing: border-box;
+}
+
+#circle {
+  width: 10px;
+  height: 10px;
+  background: red;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  margin: 5px;
+}
+
+.cons {
+  margin: 20rpx;
+  display: flex;
+  box-sizing: border-box;
+  
+}
+
+.jz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0rpx 0;
+  width: 100%;
+}
+
+.title {
+  padding-left: 15px;
+  margin-bottom: 10px;
+  padding: 25px 20px 10px;
+}
+
+.logo, .title-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.title-text {
+  font-size: 32px;
+  font-weight: 500;
+  margin-left: 15px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #7d7e80;
+  margin: 0 0 10px;
+}
+
+.userinfo {
+  display: flex;
+  /*position: relative;*/
+  width: 100%;
+  height: 110rpx;
+  background: #76a21e;
+  color: #fff;
+}
+
+.abc {
+  border: 2rpx black solid;
+  width: 80%;
+  word-break: break-all;
+  align-items: center;
+  justify-content: center;
+}
+
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 2rpx 0 2rpx 10rpx;
+  border-radius: 50%;
+}
+
+.scanQRcss {
+  display: flex;
+  width: 90rpx;
+  height: 90rpx;
+  position: fixed;
+  right: 3%;
+  top: 150rpx;
+}
+
+.scanQRcss:active {
+  background-color: #aaa;
+}
+
+.userinfo-nickname {
+  margin: 30rpx;
+  color: #aaa;
+}
+
+.usermotto {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  margin-top: 40rpx;
+  height: 250rpx;
+  width: 100%;
+}
+
+.r {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #f7f7f7;
+  /*padding: 20px;*//*position: relative;*/
+  width: 45%;
+  height: 250rpx;
+  /* box-shadow: 0rpx 10rpx 50rpx 10rpx rgba(85, 85, 85, 0.10);*/
+  border: 3px solid #e4e4e2;
+  box-shadow: 0px 3px 5px 1px #e4e4e299;
+}
+
+.r:active {
+  background: #7f8c8d;
+}
+
+.img {
+  width: 64px;
+  height: 64px;
+}

@@ -1,0 +1,36 @@
+.van-swipe-cell__left, .van-swipe-cell__right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 44px;
+  font-size: 15px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+}
+
+.van-swipe-cell__right {
+  background-color: #1abc9c;
+}
+
+
+
+.containers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50rpx 20rpx;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+.smallicon {
+  display: flex;
+  width: 128rpx;
+  height: 128rpx;
+}

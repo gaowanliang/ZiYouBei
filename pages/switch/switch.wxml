@@ -1,0 +1,42 @@
+<!--pages/switch/switch.wxml-->
+<van-dialog id="van-dialog" />
+<view wx:if="{{permissions}}">
+  <van-cell-group>
+    <van-switch-cell id="A" title="{{perstr}}" checked="{{ perjudge }}" bind:change="tanslate" />
+  </van-cell-group>
+  <view style='font-size:14px;color:#bdc3c7;margin:10px 15px;'>{{perd}}</view>
+  <view wx:if="{{perjudge}}">
+    <van-cell-group>
+      <van-switch-cell id="B" title="授予全部权限" checked="{{ qx }}" bind:change="tanslate" />
+    </van-cell-group>
+    <view style='font-size:14px;color:#bdc3c7;margin:10px 15px;'>授予全部权限后，被授权人即拥有自我修改，授权其他人修改的权限。关闭此选项后，被授权人只拥有修改题目的权限，无授权其他人修改的权限。</view>
+  </view>
+</view>
+<view wx:if="{{haveTest && perjudge}}">
+  <van-picker show-toolbar title="题库选择" columns="{{names}}" bind:cancel="onCancel" bind:confirm="onConfirm" />
+  <view wx:if='{{page=="share"}}'>
+    <van-cell-group>
+      <van-switch-cell title="限时分享" checked="{{ checked }}" bind:change="onChange" />
+    </van-cell-group>
+    <demo-block wx:if="{{ checked }}" title="选择完整时间">
+      <van-datetime-picker type="datetime" data-type="datetime" confirm-button-text="{{dada}}" cancel-button-text="" value="{{ currentDate1 }}" min-date="{{ minDate }}" title="选择截止时间" bind:input="onInput" />
+    </demo-block>
+  </view>
+  <view class='center'>
+    <image src='https://s2.ax1x.com/2019/05/30/VM4mng.png' style='height:60px;width:60px;margin:5px;'></image>
+    <text style='margin:5px;'>下拉可刷新题库</text>
+  </view>
+</view>
+<view class='containers' wx:if="{{!perjudge}}">
+  <view class="kuang center">
+    <text style='font-size:16px;color:#b2bec3;margin-top:5rpx;'>授权码</text>
+    <van-loading wx:if="{{loading==0}}" type="spinner" />
+    <image class='u' src="{{url}}" bindload='load'></image>
+    <text style='font-size:16px;color:#b2bec3;margin:20rpx;'>授权人扫描此码，被授权人即可获得相关权限</text>
+    <text style='font-size:16px;color:#b2bec3;margin:20rpx;'>此码有效时长1分钟</text>
+  </view>
+  <view class='center'>
+    <image src='https://s2.ax1x.com/2019/05/30/VM4mng.png' style='height:60px;width:60px;margin:5px;'></image>
+    <text style='margin:5px;'>下拉可刷新二维码</text>
+  </view>
+</view>

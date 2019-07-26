@@ -1,0 +1,47 @@
+/* pages/about/about.wxss */
+
+.containers, .kuang {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.containers {
+  margin: 20rpx;
+}
+
+.logo {
+  width: 128px;
+  height: 128px;
+  margin: 50rpx;
+}
+
+.title {
+  font-size: 28px;
+  margin: 0 0 20rpx;
+}
+
+.kuang {
+  height: 80%;
+  width: 99%;
+  border: 3px solid #e4e4e2;
+  font-size: 16px;
+  background-color: #fff;
+  color: #353b48;
+  margin: 0 0 20rpx;
+}
+
+.desc {
+  font-size: 14px;
+  color: #7d7e80;
+  margin: 0 0 10px;
+  /*padding-left: 25px;*/
+}
+
+.u {
+  width: 300rpx;
+  height: 300rpx;
+  margin: 50rpx;
+  /**/
+}

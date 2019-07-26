@@ -1,0 +1,17 @@
+<!--pages/share/share.wxml-->
+
+<view class='containers'>
+  <view class="title">
+    <image class="logo" src="/images/1.png" />
+    <view class="title-text">自由背</view>
+  </view>
+  <view class="desc">一个程序自由背遍天下题</view>
+  <view class="kuang">
+    <van-loading wx:if="{{loading==0}}" type="spinner" />
+    <image class='u' src="{{url}}" mode="widthFix" data-src="{{url}}" bindtap="previewImage" bindload='load'></image>
+    <text>点击二维码后长按可发送给好友或保存到手机</text>
+    <text>\n好友使用首页扫码工具扫此码即可获得这个题库\n</text>
+    <text>　</text>
+  </view>
+  <view class="check" bindtap='check'>完成</view>
+</view>

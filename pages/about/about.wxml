@@ -1,0 +1,24 @@
+<!--pages/about/about.wxml-->
+<view class='containers'>
+  <image src='/images/1.png' class='logo'></image>
+  <view class="title">自由背</view>
+  <view class="desc">一个程序自由背遍天下题</view>
+  <view class="desc">版本：1.0.6</view>
+  <view class="kuang">
+    <text>\n一个普通大一学生奋斗10天的成果</text>
+    <image class='u' src="/images/qrcode.jpg" mode="widthFix" data-src="/images/qrcode.jpg" bindtap="previewImage"></image>
+    <text>点击二维码后长按可发送给好友或保存到手机</text>
+    <text>　</text>
+  </view>
+  <van-collapse value="{{ active2 }}" data-key="active2" accordion bind:change="onChange">
+    <van-collapse-item title="小程序简介" value="">
+      本小程序旨在破除现阶段相关背题软件的专一性，其灵活度更高。用户可以自定义题库进行上传，使用户可以一个程序背诵天下题。
+    </van-collapse-item>
+    <van-collapse-item title="开发人员" value="高玩梁">
+      联系方式：gaowanliang6@gmail.com
+    </van-collapse-item>
+    <van-collapse-item title="关于隐私" value="">
+      对于您的隐私数据（如微信昵称，头像等）不会上传至服务器，请放心使用
+    </van-collapse-item>
+  </van-collapse>
+</view>
